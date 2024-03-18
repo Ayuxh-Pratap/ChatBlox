@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 import { supabaseBrowser } from '@/lib/supabase/browser';
 import { User } from '@supabase/supabase-js';
 
-export default function ChatHeader({ user }: { user: User | undefined }) {
+export default function ChatHeader() {
 
   const handleLoginWithGithub = () => {
     const supabase = supabaseBrowser();
@@ -28,11 +28,7 @@ export default function ChatHeader({ user }: { user: User | undefined }) {
             <h1 className='text-sm text-gray-400'>9 online</h1>
           </div>
         </div>
-        {user ? (
-          <Button onClick={handleLoginWithGithub}>Logout</Button>
-        ) : (
-          <Button onClick={handleLoginWithGithub}>Login</Button>
-        )}
+        <Button onClick={handleLoginWithGithub}>Login</Button>
       </div>
     </div>
   );
