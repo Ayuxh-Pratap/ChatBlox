@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { Button } from './ui/button'
-import { supabaseBrowser } from '@/lib/supabase/browser'
-import { User } from '@supabase/supabase-js'
+import React from 'react';
+import { Button } from './ui/button';
+import { supabaseBrowser } from '@/lib/supabase/browser';
+import { User } from '@supabase/supabase-js';
 
-const ChatHeader = ({ user }: { user: User | undefined }) => {
+export default function ChatHeader({ user }: { user: User | undefined }) {
 
   const handleLoginWithGithub = () => {
     const supabase = supabaseBrowser();
@@ -32,11 +32,8 @@ const ChatHeader = ({ user }: { user: User | undefined }) => {
           <Button onClick={handleLoginWithGithub}>Logout</Button>
         ) : (
           <Button onClick={handleLoginWithGithub}>Login</Button>
-        )
-        }
+        )}
       </div>
     </div>
-  )
+  );
 }
-
-export default ChatHeader
