@@ -1,4 +1,5 @@
 import ChatHeader from '@/components/ChatHeader'
+import InitUser from '@/lib/store/initUser';
 import { supabaseServer } from '@/lib/supabase/server';
 import React from 'react'
 
@@ -14,6 +15,7 @@ export default async function page() {
           <ChatHeader user={data.session?.user} />
         </div>
       </div>
+      <InitUser user={data.session?.user} />
     </>
   )
 }
