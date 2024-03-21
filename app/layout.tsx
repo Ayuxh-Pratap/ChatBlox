@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "sonner";
 
 const space_Grotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -22,8 +23,10 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="dark"
           enableSystem
-          disableTransitionOnChange>
+          disableTransitionOnChange
+        >
           {children}
+          <Toaster position="top-center" />
         </ThemeProvider>
       </body>
     </html>
