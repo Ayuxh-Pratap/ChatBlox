@@ -5,7 +5,7 @@ import InitMessages from "@/lib/store/InitMessages";
 import { LIMIT_MESSAGE } from "@/lib/constant";
 
 export default async function ChatMessages() {
-	const supabase = supabaseServer();
+	const supabase = await supabaseServer();
 
 	const { data } = await supabase
 		.from("messages")
